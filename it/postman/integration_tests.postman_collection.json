@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "094b514d-3c9b-492c-a117-d9b4cad57e89",
+		"name": "Node REST API Integration Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Successful Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"200 Response Code\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Content-Type Json\", function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=utf-8');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct Route Id\", function () {\r",
+							"    const json = pm.response.json()\r",
+							"    pm.expect(json.route_id).to.eql(215);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct Title\", function () {\r",
+							"    const json = pm.response.json()\r",
+							"    pm.expect(json.title).to.eql(\"LA Topanga State Park Loop\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct Start Date\", function () {\r",
+							"    const json = pm.response.json()\r",
+							"    pm.expect(json.date_start).to.eql(\"2021-10-10T14:56:36-07:00\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ENDPOINT}}/hikes/215",
+					"host": [
+						"{{API_ENDPOINT}}"
+					],
+					"path": [
+						"hikes",
+						"215"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Failure Invalid Path",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"404 Response Code\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ENDPOINT}}/invalid-path",
+					"host": [
+						"{{API_ENDPOINT}}"
+					],
+					"path": [
+						"invalid-path"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Failure Missing Query Param",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"400 Response Code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ENDPOINT}}/hikes/",
+					"host": [
+						"{{API_ENDPOINT}}"
+					],
+					"path": [
+						"hikes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Failure Invalid Param",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"400 Response Code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ENDPOINT}}/hikes/invalid-hike-id",
+					"host": [
+						"{{API_ENDPOINT}}"
+					],
+					"path": [
+						"hikes",
+						"invalid-hike-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Failure Nonexistent Param",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"400 Response Code\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_ENDPOINT}}/hikes/250",
+					"host": [
+						"{{API_ENDPOINT}}"
+					],
+					"path": [
+						"hikes",
+						"250"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Failure Invalid HTTP Method",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"405 Response Code\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{API_ENDPOINT}}/romannumeral?query=255",
+					"host": [
+						"{{API_ENDPOINT}}"
+					],
+					"path": [
+						"romannumeral"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "255"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{API_PASSWORD}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{API_USER}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_ENDPOINT",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "API_USER",
+			"value": "admin"
+		},
+		{
+			"key": "API_PASSWORD",
+			"value": "admin"
+		}
+	]
+}

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "newman run it/postman/integration_tests.postman_collection.json"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
