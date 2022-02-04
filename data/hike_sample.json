@@ -1,0 +1,62 @@
+{
+  "220": {
+      "route_id": 220,
+      "title": "Horseback ride near Prosser",
+      "date_start": "2021-05-02T13:54:02-07:00",
+      "stats": {
+          "startTime": "2021-05-02T20:54:02.443Z",
+          "endTime": "2021-05-02T23:59:55.000Z",
+          "distance": 5.049838399252281,
+          "duration": 11152557,
+          "elevationGain": 1315.0999999999988
+      }
+  },
+  "218": {
+      "route_id": 218,
+      "title": "Torrey Pines Out and Back",
+      "date_start": "2021-10-16T11:25:31-07:00",
+      "stats": {
+          "startTime": "2021-10-16T18:25:31Z",
+          "endTime": "2021-10-16T19:32:54Z",
+          "distance": 2.812585309670528,
+          "duration": 4043000,
+          "elevationGain": 720.7982482910156
+      }
+  },
+  "217": {
+      "route_id": 217,
+      "title": "Noble Canyon Loop",
+      "date_start": "2021-10-14T11:07:29-07:00",
+      "stats": {
+          "startTime": "2021-10-14T18:07:29Z",
+          "endTime": "2021-10-14T21:55:14Z",
+          "distance": 19.04439150625066,
+          "duration": 13665000,
+          "elevationGain": 2806.786987304688
+      }
+  },
+  "216": {
+      "route_id": 216,
+      "title": "Cuyamaca Loop",
+      "date_start": "2021-10-13T14:54:55-07:00",
+      "stats": {
+          "startTime": "2021-10-13T21:54:55Z",
+          "endTime": "2021-10-14T00:05:32Z",
+          "distance": 14.985855978005217,
+          "duration": 7837000,
+          "elevationGain": 2088.5072021484375
+      }
+  },
+  "215": {
+      "route_id": 215,
+      "title": "LA Topanga State Park Loop",
+      "date_start": "2021-10-10T14:56:36-07:00",
+      "stats": {
+          "startTime": "2021-10-10T21:56:36Z",
+          "endTime": "2021-10-11T00:29:14Z",
+          "distance": 14.432459180004837,
+          "duration": 9158000,
+          "elevationGain": 3018.3411865234375
+      }
+  }
+}

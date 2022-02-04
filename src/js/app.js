@@ -3,8 +3,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const basicAuth = require('express-basic-auth')
 
-var indexRouter = require('./routes/default');
 var usersRouter = require('./routes/hikes');
+var notFoundRouter = require('./routes/notFound');
+var notAllowedRouter = require('./routes/notAllowed');
 
 var app = express();
 
@@ -18,7 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/hikes', usersRouter);
+app.use('/', notFoundRouter);
+app.use('/', notAllowedRouter);
 
 module.exports = app;
