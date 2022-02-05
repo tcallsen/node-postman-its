@@ -1,0 +1,22 @@
+{
+  "values": [
+    {
+      "key": "API_ENDPOINT",
+      "value": "http://localhost:3000",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "API_USER",
+      "value": "admin",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "API_PASSWORD",
+      "value": "admin",
+      "enabled": true,
+      "type": "text"
+    }
+  ]
+}

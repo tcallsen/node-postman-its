@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "newman run it/postman/integration_tests.postman_collection.json"
+    "test": "newman run it/postman/integration_tests.postman_collection.json -e it/postman/localhost-environment.json"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
