@@ -1,6 +1,6 @@
-# Automated Postman Integration Tests for a REST API
+# Automated Postman Tests for a REST API
 
-A project containing a Sample REST API and integration tests created in Postman. The Postman integration tests are designed to be executed from the command-line with [Newman](https://github.com/postmanlabs/newman).
+A project containing a Sample REST API and tests created in Postman. The Postman tests are designed to be executed from the command-line with [Newman](https://github.com/postmanlabs/newman).
 
 ## Building and Running the Sample REST API
 
@@ -41,11 +41,11 @@ Response:
 }
 ```
 
-## Integration Tests
+## Tests
 
-Integration tests were created in a Postman Collection available [here](it/postman/integration_tests.postman_collection.json). Connection and authentication information pointing to the Sample REST API are defined at the Collection level, and can be overriden by modifying the appropriate values in an [environment file](it/postman/localhost-environment.json).
+Tests were created in a Postman Collection available [here](it/postman/integration_tests.postman_collection.json). Connection and authentication information pointing to the Sample REST API are defined at the Collection level, and can be overriden by modifying the appropriate values in an [environment file](it/postman/localhost-environment.json).
 
-To execute the integration tests, ensure that the Sample REST API is running, [Newman is available](https://github.com/postmanlabs/newman#installation), and then run:
+To execute the tests, ensure that the Sample REST API is running, [Newman is available](https://github.com/postmanlabs/newman#installation), and then run:
 
 ```
 newman run it/postman/integration_tests.postman_collection.json -e it/postman/localhost-environment.json
@@ -55,4 +55,4 @@ This command, or similar, can also be used in CI Pipelines or other build proces
 
 ## Supplemental Blog Post
 
-Here is a blog post I created that explains the Postman integration test creation and execution in more detail: [https://taylor.callsen.me/automated-api-integration-tests-with-postman-and-newman/](https://taylor.callsen.me/automated-api-integration-tests-with-postman-and-newman/)
+Here is a blog post I created that explains the Postman test creation and execution in more detail: [https://taylor.callsen.me/automated-api-integration-tests-with-postman-and-newman/](https://taylor.callsen.me/automated-api-integration-tests-with-postman-and-newman/)
